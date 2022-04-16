@@ -12,6 +12,7 @@ namespace Deneme.Controllers
     public class ProductController : Controller
     {
         ProductManager pm = new ProductManager(new ProductRepository());
+
         public IActionResult Index()
         {
             return View(pm.GetList());

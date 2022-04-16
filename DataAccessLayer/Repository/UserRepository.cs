@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repository
 {
-    class UserRepository : IUserDal
+    public class UserRepository : IUserDal
     {
         DataContext dc = new DataContext();
+
         public void AddUser(User user)
         {
             dc.Add(user);

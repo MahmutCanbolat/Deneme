@@ -9,10 +9,11 @@ using EntityLayer.Concrete;
 namespace DataAccessLayer.Concrete
 {
     public class DataContext:DbContext
-    {
+    {        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DenemeDb; integrated security = true;");
+            //optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DenemeDb; integrated security = true;");
+            optionsBuilder.UseSqlite("Data Source = deneme.db");
         }
 
         public DbSet<Product> Products { get; set; }

@@ -1,4 +1,7 @@
 ﻿using Deneme.Models;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Repository;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,6 +15,7 @@ namespace Deneme.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        UserManager um = new UserManager(new UserRepository());
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -19,11 +23,6 @@ namespace Deneme.Controllers
         }
 
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
         {
             return View();
         }
