@@ -12,6 +12,7 @@ namespace Deneme.Controllers
     public class ProductController : Controller
     {
         ProductManager pm = new ProductManager(new ProductRepository());
+        UserManager um = new UserManager(new UserRepository());
 
         public IActionResult Index()
         {
@@ -53,8 +54,7 @@ namespace Deneme.Controllers
 
         public IActionResult Update(int id)
         {
-            var productValue = pm.GetById(id);
-            
+            var productValue = pm.GetById(id);          
             return View(productValue);
         }
 
@@ -62,6 +62,7 @@ namespace Deneme.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Update([Bind("ProductId,ProductName,Description,Price,UserId")] Product p)
         {
+            p.UserId = 1;
             pm.ProductUpdate(p);
 
             return RedirectToAction("Index", "Product");

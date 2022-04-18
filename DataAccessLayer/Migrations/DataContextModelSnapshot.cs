@@ -46,9 +46,6 @@ namespace DataAccessLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Email")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Password")
                         .HasColumnType("TEXT");
 

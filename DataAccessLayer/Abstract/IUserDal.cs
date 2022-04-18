@@ -13,6 +13,7 @@ namespace DataAccessLayer.Abstract
         void AddUser(User user);
         void DeleteUser(User user);
         void UpdateUser(User user);
+        User GetByName(string username);
         User GetById(int id);
     }
 }

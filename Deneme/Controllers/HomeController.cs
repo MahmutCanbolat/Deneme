@@ -27,6 +27,23 @@ namespace Deneme.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Index(int id)
+        {
+            //Eksik, login kontrolü yapılacak
+            if (ModelState.IsValid)
+            {
+                var userValue = um.GetById(id);
+                if(userValue != null)
+                {
+                    return RedirectToAction("Index", "Product");
+                }              
+            }
+            
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

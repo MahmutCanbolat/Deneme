@@ -25,6 +25,11 @@ namespace DataAccessLayer.Repository
             dc.SaveChanges();
         }
 
+        public User GetByName(string username)
+        {
+            return dc.Users.Find(username);
+        }
+
         public User GetById(int id)
         {
             return dc.Users.Find(id);

@@ -17,6 +17,11 @@ namespace BusinessLayer.Concrete
         {
             _userDal = userDal;
         }
+        public User GetByName(string username)
+        {
+            return _userDal.GetByName(username);
+        }
+
         public User GetById(int id)
         {
             return _userDal.GetById(id);
