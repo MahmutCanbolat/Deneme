@@ -39,8 +39,7 @@ namespace Deneme.Controllers
                 {
                     return RedirectToAction("Index", "Product");
                 }              
-            }
-            
+            }           
             return View();
         }
 

@@ -30,6 +30,7 @@ namespace Deneme.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Henüz login kısmı gerçekleşmediği için userid elle atandı.
                 p.UserId = 1;
                 pm.ProductAdd(p);
                 return RedirectToAction(nameof(Index));
